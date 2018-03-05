@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+test -z "${DEBUG:-}" || {
+    set -o xtrace
+}
+
+docker build -t anthonysterling/skeema .
